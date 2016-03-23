@@ -170,13 +170,13 @@ class remi (
 
       'remi-test-debuginfo':
         descr       => "Remi's test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
-        baseurl     => $remi_php56_debuginfo_baseurl,
-        mirrorlist  => $remi_php56_debuginfo_mirrorlist,
-        enabled     => $remi_php56_debuginfo_enabled,
-        gpgcheck    => $remi_php56_debuginfo_gpgcheck,
+        baseurl     => $remi_test_debuginfo_baseurl,
+        mirrorlist  => $remi_test_debuginfo_mirrorlist,
+        enabled     => $remi_test_debuginfo_enabled,
+        gpgcheck    => $remi_test_debuginfo_gpgcheck,
         gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
-        includepkgs => $remi_php56_debuginfo_includepkgs,
-        exclude     => $remi_php56_debuginfo_exclude;
+        includepkgs => $remi_test_debuginfo_includepkgs,
+        exclude     => $remi_test_debuginfo_exclude;
     }
 
     class {'remi::rpm_gpg_key':
