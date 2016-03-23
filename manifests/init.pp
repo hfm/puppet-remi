@@ -109,7 +109,7 @@ class remi (
   $remi_php70_test_includepkgs           = undef,
   $remi_php70_test_exclude               = undef,
 
-  $remi_php70_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test70/$basearch/",
+  $remi_php70_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test70/\$basearch/",
   $remi_php70_test_debuginfo_mirrorlist  = absent,
   $remi_php70_test_debuginfo_enabled     = 0,
   $remi_php70_test_debuginfo_gpgcheck    = 1,
