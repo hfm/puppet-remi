@@ -37,6 +37,9 @@
 #    }
 #
 class remi (
+  $ensure                                = present,
+  $path                                  = '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+
   $remi_baseurl                          = absent,
   $remi_mirrorlist                       = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
   $remi_enabled                          = 1,
@@ -265,8 +268,8 @@ class remi (
     }
 
     class {'remi::rpm_gpg_key':
-      ensure => present,
-      path   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      ensure => $ensure,
+      path   => $path,
       before => [
         Yumrepo['remi'],
         Yumrepo['remi-php55'],
