@@ -35,6 +35,11 @@ describe 'remi class' do
     remi-php56-debuginfo
     remi-php56-debuginfo
     remi-test-debuginfo
+    remi-safe
+    remi-php70
+    remi-php70-debuginfo
+    remi-php70-test
+    remi-php70-test-debuginfo
   ).each do |repo|
     describe yumrepo(repo) do
       it { should exist }

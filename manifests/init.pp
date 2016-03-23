@@ -37,61 +37,96 @@
 #    }
 #
 class remi (
-  $remi_baseurl                     = absent,
-  $remi_mirrorlist                  = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
-  $remi_enabled                     = 1,
-  $remi_gpgcheck                    = 1,
-  $remi_includepkgs                 = undef,
-  $remi_exclude                     = undef,
+  $remi_baseurl                          = absent,
+  $remi_mirrorlist                       = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
+  $remi_enabled                          = 1,
+  $remi_gpgcheck                         = 1,
+  $remi_includepkgs                      = undef,
+  $remi_exclude                          = undef,
 
-  $remi_php55_baseurl               = absent,
-  $remi_php55_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php55/mirror",
-  $remi_php55_enabled               = 0,
-  $remi_php55_gpgcheck              = 1,
-  $remi_php55_includepkgs           = undef,
-  $remi_php55_exclude               = undef,
+  $remi_php55_baseurl                    = absent,
+  $remi_php55_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php55/mirror",
+  $remi_php55_enabled                    = 0,
+  $remi_php55_gpgcheck                   = 1,
+  $remi_php55_includepkgs                = undef,
+  $remi_php55_exclude                    = undef,
 
-  $remi_php56_baseurl               = absent,
-  $remi_php56_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php56/mirror",
-  $remi_php56_enabled               = 0,
-  $remi_php56_gpgcheck              = 1,
-  $remi_php56_includepkgs           = undef,
-  $remi_php56_exclude               = undef,
+  $remi_php56_baseurl                    = absent,
+  $remi_php56_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php56/mirror",
+  $remi_php56_enabled                    = 0,
+  $remi_php56_gpgcheck                   = 1,
+  $remi_php56_includepkgs                = undef,
+  $remi_php56_exclude                    = undef,
 
-  $remi_test_baseurl                = absent,
-  $remi_test_mirrorlist             = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test/mirror",
-  $remi_test_enabled                = 0,
-  $remi_test_gpgcheck               = 1,
-  $remi_test_includepkgs            = undef,
-  $remi_test_exclude                = undef,
+  $remi_test_baseurl                     = absent,
+  $remi_test_mirrorlist                  = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test/mirror",
+  $remi_test_enabled                     = 0,
+  $remi_test_gpgcheck                    = 1,
+  $remi_test_includepkgs                 = undef,
+  $remi_test_exclude                     = undef,
 
-  $remi_debuginfo_baseurl           = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-remi/\$basearch/",
-  $remi_debuginfo_mirrorlist        = absent,
-  $remi_debuginfo_enabled           = 0,
-  $remi_debuginfo_gpgcheck          = 1,
-  $remi_debuginfo_includepkgs       = undef,
-  $remi_debuginfo_exclude           = undef,
+  $remi_debuginfo_baseurl                = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-remi/\$basearch/",
+  $remi_debuginfo_mirrorlist             = absent,
+  $remi_debuginfo_enabled                = 0,
+  $remi_debuginfo_gpgcheck               = 1,
+  $remi_debuginfo_includepkgs            = undef,
+  $remi_debuginfo_exclude                = undef,
 
-  $remi_php55_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php55/\$basearch/",
-  $remi_php55_debuginfo_mirrorlist  = absent,
-  $remi_php55_debuginfo_enabled     = 0,
-  $remi_php55_debuginfo_gpgcheck    = 1,
-  $remi_php55_debuginfo_includepkgs = undef,
-  $remi_php55_debuginfo_exclude     = undef,
+  $remi_php55_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php55/\$basearch/",
+  $remi_php55_debuginfo_mirrorlist       = absent,
+  $remi_php55_debuginfo_enabled          = 0,
+  $remi_php55_debuginfo_gpgcheck         = 1,
+  $remi_php55_debuginfo_includepkgs      = undef,
+  $remi_php55_debuginfo_exclude          = undef,
 
-  $remi_php56_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php56/\$basearch/",
-  $remi_php56_debuginfo_mirrorlist  = absent,
-  $remi_php56_debuginfo_enabled     = 0,
-  $remi_php56_debuginfo_gpgcheck    = 1,
-  $remi_php56_debuginfo_includepkgs = undef,
-  $remi_php56_debuginfo_exclude     = undef,
+  $remi_php56_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php56/\$basearch/",
+  $remi_php56_debuginfo_mirrorlist       = absent,
+  $remi_php56_debuginfo_enabled          = 0,
+  $remi_php56_debuginfo_gpgcheck         = 1,
+  $remi_php56_debuginfo_includepkgs      = undef,
+  $remi_php56_debuginfo_exclude          = undef,
 
-  $remi_test_debuginfo_baseurl      = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test/\$basearch/",
-  $remi_test_debuginfo_mirrorlist   = absent,
-  $remi_test_debuginfo_enabled      = 0,
-  $remi_test_debuginfo_gpgcheck     = 1,
-  $remi_test_debuginfo_includepkgs  = undef,
-  $remi_test_debuginfo_exclude      = undef,
+  $remi_test_debuginfo_baseurl           = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test/\$basearch/",
+  $remi_test_debuginfo_mirrorlist        = absent,
+  $remi_test_debuginfo_enabled           = 0,
+  $remi_test_debuginfo_gpgcheck          = 1,
+  $remi_test_debuginfo_includepkgs       = undef,
+  $remi_test_debuginfo_exclude           = undef,
+
+  $remi_safe_baseurl                    = absent,
+  $remi_safe_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/safe/mirror",
+  $remi_safe_enabled                    = 0,
+  $remi_safe_gpgcheck                   = 1,
+  $remi_safe_includepkgs                = undef,
+  $remi_safe_exclude                    = undef,
+
+  $remi_php70_baseurl                    = absent,
+  $remi_php70_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php70/mirror",
+  $remi_php70_enabled                    = 0,
+  $remi_php70_gpgcheck                   = 1,
+  $remi_php70_includepkgs                = undef,
+  $remi_php70_exclude                    = undef,
+
+  $remi_php70_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php70/\$basearch/",
+  $remi_php70_debuginfo_mirrorlist       = absent,
+  $remi_php70_debuginfo_enabled          = 0,
+  $remi_php70_debuginfo_gpgcheck         = 1,
+  $remi_php70_debuginfo_includepkgs      = undef,
+  $remi_php70_debuginfo_exclude          = undef,
+
+  $remi_php70_test_baseurl               = absent,
+  $remi_php70_test_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test70/mirror",
+  $remi_php70_test_enabled               = 0,
+  $remi_php70_test_gpgcheck              = 1,
+  $remi_php70_test_includepkgs           = undef,
+  $remi_php70_test_exclude               = undef,
+
+  $remi_php70_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test70/$basearch/",
+  $remi_php70_test_debuginfo_mirrorlist  = absent,
+  $remi_php70_test_debuginfo_enabled     = 0,
+  $remi_php70_test_debuginfo_gpgcheck    = 1,
+  $remi_php70_test_debuginfo_includepkgs = undef,
+  $remi_php70_test_debuginfo_exclude     = undef,
 ){
 
   require epel
@@ -177,6 +212,56 @@ class remi (
         gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
         includepkgs => $remi_test_debuginfo_includepkgs,
         exclude     => $remi_test_debuginfo_exclude;
+
+      'remi-safe':
+        descr       => "Safe Remi's test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_safe_baseurl,
+        mirrorlist  => $remi_safe_mirrorlist,
+        enabled     => $remi_safe_enabled,
+        gpgcheck    => $remi_safe_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_safe_includepkgs,
+        exclude     => $remi_safe_exclude;
+
+      'remi-php70':
+        descr       => "Remi's PHP 7.0 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php70_baseurl,
+        mirrorlist  => $remi_php70_mirrorlist,
+        enabled     => $remi_php70_enabled,
+        gpgcheck    => $remi_php70_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php70_includepkgs,
+        exclude     => $remi_php70_exclude;
+
+      'remi-php70-debuginfo':
+        descr       => "Remi's PHP 7.0 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php70_debuginfo_baseurl,
+        mirrorlist  => $remi_php70_debuginfo_mirrorlist,
+        enabled     => $remi_php70_debuginfo_enabled,
+        gpgcheck    => $remi_php70_debuginfo_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php70_debuginfo_includepkgs,
+        exclude     => $remi_php70_debuginfo_exclude;
+
+      'remi-php70-test':
+        descr       => "Remi's PHP 7.0 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php70_test_baseurl,
+        mirrorlist  => $remi_php70_test_mirrorlist,
+        enabled     => $remi_php70_test_enabled,
+        gpgcheck    => $remi_php70_test_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php70_test_includepkgs,
+        exclude     => $remi_php70_test_exclude;
+
+      'remi-php70-test-debuginfo':
+        descr       => "Remi's PHP 7.0 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php70_test_debuginfo_baseurl,
+        mirrorlist  => $remi_php70_test_debuginfo_mirrorlist,
+        enabled     => $remi_php70_test_debuginfo_enabled,
+        gpgcheck    => $remi_php70_test_debuginfo_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php70_test_debuginfo_includepkgs,
+        exclude     => $remi_php70_test_debuginfo_exclude;
     }
 
     class {'remi::rpm_gpg_key':
@@ -192,6 +277,11 @@ class remi (
         Yumrepo['remi-php56-debuginfo'],
         Yumrepo['remi-php56-debuginfo'],
         Yumrepo['remi-test-debuginfo'],
+        Yumrepo['remi-safe'],
+        Yumrepo['remi-php70'],
+        Yumrepo['remi-php70-debuginfo'],
+        Yumrepo['remi-php70-test'],
+        Yumrepo['remi-php70-test-debuginfo'],
       ],
     }
 
