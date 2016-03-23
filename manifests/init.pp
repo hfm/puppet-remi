@@ -168,16 +168,6 @@ class remi (
         includepkgs => $remi_php56_debuginfo_includepkgs,
         exclude     => $remi_php56_debuginfo_exclude;
 
-      'remi-php56-debuginfo':
-        descr       => "Remi's PHP 5.6 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
-        baseurl     => $remi_php56_debuginfo_baseurl,
-        mirrorlist  => $remi_php56_debuginfo_mirrorlist,
-        enabled     => $remi_php56_debuginfo_enabled,
-        gpgcheck    => $remi_php56_debuginfo_gpgcheck,
-        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
-        includepkgs => $remi_php56_debuginfo_includepkgs,
-        exclude     => $remi_php56_debuginfo_exclude;
-
       'remi-test-debuginfo':
         descr       => "Remi's test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
         baseurl     => $remi_php56_debuginfo_baseurl,
