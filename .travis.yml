@@ -10,3 +10,13 @@ matrix:
     env: PUPPET_VERSION='~> 3.8.0'
   - rvm: 2.3.0
     env: PUPPET_VERSION='~> 4.4.0'
+  - rvm: default
+    sudo: required
+    services: docker
+    env: BEAKER_set=centos6
+    script: bundle exec rake beaker
+  - rvm: default
+    sudo: required
+    services: docker
+    env: BEAKER_set=centos7
+    script: bundle exec rake beaker
