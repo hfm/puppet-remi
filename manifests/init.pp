@@ -192,16 +192,16 @@ class remi (
     class {'remi::rpm_gpg_key':
       ensure => present,
       path   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
-      before => Yumrepo[
-        'remi',
-        'remi-php55',
-        'remi-php56',
-        'remi-test',
-        'remi-debuginfo',
-        'remi-php55-debuginfo',
-        'remi-php56-debuginfo',
-        'remi-php56-debuginfo',
-        'remi-test-debuginfo',
+      before => [
+        Yumrepo['remi'],
+        Yumrepo['remi-php55'],
+        Yumrepo['remi-php56'],
+        Yumrepo['remi-test'],
+        Yumrepo['remi-debuginfo'],
+        Yumrepo['remi-php55-debuginfo'],
+        Yumrepo['remi-php56-debuginfo'],
+        Yumrepo['remi-php56-debuginfo'],
+        Yumrepo['remi-test-debuginfo'],
       ],
     }
 
