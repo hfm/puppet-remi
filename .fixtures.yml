@@ -1,0 +1,6 @@
+fixtures:
+  forge_modules:
+    stdlib: "puppetlabs/stdlib"
+    epel: "stahnma/epel"
+  symlinks:
+    remi: "#{source_dir}"

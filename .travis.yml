@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+script:
+- bundle exec rake lint
+- bundle exec rake validate
+- bundle exec rake spec
+matrix:
+  include:
+  - rvm: 2.0.0
+    env: PUPPET_VERSION='~> 3.8.0'
+  - rvm: 2.3.0
+    env: PUPPET_VERSION='~> 4.4.0'
