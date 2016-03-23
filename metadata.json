@@ -1,6 +1,6 @@
 {
   "name": "hfm-remi",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "hfm",
   "summary": "Configure the remi repository and import the GPG keys.",
   "license": "MIT",
