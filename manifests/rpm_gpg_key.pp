@@ -20,12 +20,12 @@ class remi::rpm_gpg_key (
 ){
 
   file { $path:
-    ensure  => $ensure,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    ensure => $ensure,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
     source => 'puppet:///modules/remi/RPM-GPG-KEY-remi',
-    before  => Exec['import-remi'],
+    before => Exec['import-remi'],
   }
 
   exec { 'import-remi':
