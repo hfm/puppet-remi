@@ -1,4 +1,4 @@
-Release 1.1.7 (2016/05/03)
+Release 1.1.6 (2016/05/03)
 ---
 
 - Fix: Fixed error importing rpm key [#2](https://github.com/hfm/puppet-remi/pull/2)
