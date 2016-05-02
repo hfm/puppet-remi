@@ -24,7 +24,7 @@ class remi::rpm_gpg_key (
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => file('remi/RPM-GPG-KEY-remi'),
+    source => 'puppet:///modules/remi/RPM-GPG-KEY-remi',
     before  => Exec['import-remi'],
   }
 
