@@ -24,6 +24,7 @@
 class remi (
   $ensure                                = present,
   $path                                  = '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+  $use_epel                              = true,
 
   $remi_baseurl                          = absent,
   $remi_mirrorlist                       = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
@@ -117,7 +118,9 @@ class remi (
   $remi_php70_test_debuginfo_exclude     = undef,
 ){
 
-  require epel
+  if $use_epel {
+    require epel
+  }
 
   if ($::osfamily == 'RedHat' and $::operatingsystem !~ /Fedora|Amazon/) {
     yumrepo {
