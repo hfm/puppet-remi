@@ -1,7 +1,7 @@
 # puppet-remi
 
 [![Build Status](https://img.shields.io/travis/hfm/puppet-remi/master.svg?style=flat-square)](https://travis-ci.org/hfm/puppet-remi)
-[![Puppet Forge](https://img.shields.io/puppetforge/v/hfm/remi.svg?style=flat-square)](https://forge.puppetlabs.com/hfm/remi)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/hfm/remi.svg?style=flat-square)](https://forge.puppet.com/hfm/remi)
 
 #### Table of Contents
 
