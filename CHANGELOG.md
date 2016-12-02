@@ -1,6 +1,11 @@
 Release 1.2.0 (2016/07/27)
 ---
 
+- Support PHP7.1 in remi repo [#4](https://github.com/hfm/puppet-remi/pull/4)
+
+Release 1.2.0 (2016/07/27)
+---
+
 - Wrap epel declaration in if statement [#3](https://github.com/hfm/puppet-remi/pull/3)
 
 Release 1.1.6 (2016/05/03)
