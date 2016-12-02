@@ -3,12 +3,11 @@ require 'spec_helper_acceptance'
 describe 'remi class' do
   let(:manifest) do
     <<-EOS
-    include 'remi'
+    require 'remi'
 
     package { 'php':
       ensure          => installed,
       install_options => ['--enablerepo=remi-php71'],
-      require         => Class['remi'],
     }
     EOS
   end
