@@ -1,4 +1,4 @@
-Release 1.3.0 (2016/12/02)
+Release 1.3.1 (2016/12/02)
 ---
 
 - Support PHP7.1 in remi repo [#4](https://github.com/hfm/puppet-remi/pull/4)
