@@ -28,7 +28,7 @@ class remi (
 
   $remi_baseurl                          = absent,
   $remi_mirrorlist                       = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
-  $remi_enabled                          = 1,
+  $remi_enabled                          = 0,
   $remi_gpgcheck                         = 1,
   $remi_includepkgs                      = undef,
   $remi_exclude                          = undef,

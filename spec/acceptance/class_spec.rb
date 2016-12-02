@@ -31,12 +31,8 @@ describe 'remi class' do
     it { should be_mode 644 }
   end
 
-  describe yumrepo('remi') do
-    it { should exist }
-    it { should be_enabled }
-  end
-
   %w(
+    remi
     remi-php55
     remi-php56
     remi-test
