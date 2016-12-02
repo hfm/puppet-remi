@@ -34,7 +34,7 @@ include remi
 ```puppet
 class { 'remi':
   remi_safe_enabled  => 1,
-  remi_php70_enabled => 1,
+  remi_php71_enabled => 1,
 }
 ```
 
@@ -43,7 +43,7 @@ class { 'remi':
 ```yaml
 ---
 remi::remi_safe_enabled: 1
-remi::remi_php70_enabled: 1
+remi::remi_php71_enabled: 1
 ```
 
 ## Reference

@@ -18,7 +18,7 @@
 # @example
 #    class { 'remi':
 #      remi_safe_enabled  => 1,
-#      remi_php70_enabled => 1,
+#      remi_php71_enabled => 1,
 #    }
 #
 class remi (
@@ -116,6 +116,34 @@ class remi (
   $remi_php70_test_debuginfo_gpgcheck    = 1,
   $remi_php70_test_debuginfo_includepkgs = undef,
   $remi_php70_test_debuginfo_exclude     = undef,
+
+  $remi_php71_baseurl                    = absent,
+  $remi_php71_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php71/mirror",
+  $remi_php71_enabled                    = 0,
+  $remi_php71_gpgcheck                   = 1,
+  $remi_php71_includepkgs                = undef,
+  $remi_php71_exclude                    = undef,
+
+  $remi_php71_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php71/\$basearch/",
+  $remi_php71_debuginfo_mirrorlist       = absent,
+  $remi_php71_debuginfo_enabled          = 0,
+  $remi_php71_debuginfo_gpgcheck         = 1,
+  $remi_php71_debuginfo_includepkgs      = undef,
+  $remi_php71_debuginfo_exclude          = undef,
+
+  $remi_php71_test_baseurl               = absent,
+  $remi_php71_test_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test71/mirror",
+  $remi_php71_test_enabled               = 0,
+  $remi_php71_test_gpgcheck              = 1,
+  $remi_php71_test_includepkgs           = undef,
+  $remi_php71_test_exclude               = undef,
+
+  $remi_php71_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test71/\$basearch/",
+  $remi_php71_test_debuginfo_mirrorlist  = absent,
+  $remi_php71_test_debuginfo_enabled     = 0,
+  $remi_php71_test_debuginfo_gpgcheck    = 1,
+  $remi_php71_test_debuginfo_includepkgs = undef,
+  $remi_php71_test_debuginfo_exclude     = undef,
 ){
 
   if $use_epel {
@@ -253,6 +281,46 @@ class remi (
         gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
         includepkgs => $remi_php70_test_debuginfo_includepkgs,
         exclude     => $remi_php70_test_debuginfo_exclude;
+
+      'remi-php71':
+        descr       => "Remi's PHP 7.1 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php71_baseurl,
+        mirrorlist  => $remi_php71_mirrorlist,
+        enabled     => $remi_php71_enabled,
+        gpgcheck    => $remi_php71_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php71_includepkgs,
+        exclude     => $remi_php71_exclude;
+
+      'remi-php71-debuginfo':
+        descr       => "Remi's PHP 7.1 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php71_debuginfo_baseurl,
+        mirrorlist  => $remi_php71_debuginfo_mirrorlist,
+        enabled     => $remi_php71_debuginfo_enabled,
+        gpgcheck    => $remi_php71_debuginfo_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php71_debuginfo_includepkgs,
+        exclude     => $remi_php71_debuginfo_exclude;
+
+      'remi-php71-test':
+        descr       => "Remi's PHP 7.1 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php71_test_baseurl,
+        mirrorlist  => $remi_php71_test_mirrorlist,
+        enabled     => $remi_php71_test_enabled,
+        gpgcheck    => $remi_php71_test_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php71_test_includepkgs,
+        exclude     => $remi_php71_test_exclude;
+
+      'remi-php71-test-debuginfo':
+        descr       => "Remi's PHP 7.1 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php71_test_debuginfo_baseurl,
+        mirrorlist  => $remi_php71_test_debuginfo_mirrorlist,
+        enabled     => $remi_php71_test_debuginfo_enabled,
+        gpgcheck    => $remi_php71_test_debuginfo_gpgcheck,
+        gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        includepkgs => $remi_php71_test_debuginfo_includepkgs,
+        exclude     => $remi_php71_test_debuginfo_exclude;
     }
 
     class {'remi::rpm_gpg_key':
@@ -273,6 +341,10 @@ class remi (
         Yumrepo['remi-php70-debuginfo'],
         Yumrepo['remi-php70-test'],
         Yumrepo['remi-php70-test-debuginfo'],
+        Yumrepo['remi-php71'],
+        Yumrepo['remi-php71-debuginfo'],
+        Yumrepo['remi-php71-test'],
+        Yumrepo['remi-php71-test-debuginfo'],
       ],
     }
 

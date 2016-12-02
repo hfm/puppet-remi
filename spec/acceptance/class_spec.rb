@@ -1,7 +1,17 @@
 require 'spec_helper_acceptance'
 
 describe 'remi class' do
-  let(:manifest) { 'include remi' }
+  let(:manifest) do
+    <<-EOS
+    include 'remi'
+
+    package { 'php':
+      ensure          => installed,
+      install_options => ['--enablerepo=remi-php71'],
+      require         => Class['remi'],
+    }
+    EOS
+  end
 
   it 'should work without errors' do
     result = apply_manifest(manifest, :acceptable_exit_codes => [0, 2], :catch_failures => true)
@@ -40,10 +50,22 @@ describe 'remi class' do
     remi-php70-debuginfo
     remi-php70-test
     remi-php70-test-debuginfo
+    remi-php71
+    remi-php71-debuginfo
+    remi-php71-test
+    remi-php71-test-debuginfo
   ).each do |repo|
     describe yumrepo(repo) do
       it { should exist }
       it { should_not be_enabled }
     end
+  end
+
+  describe package('php') do
+    it { should be_installed }
+  end
+
+  describe command('php -v') do
+    its(:stdout) { should match /^PHP 7.1.\d+/ }
   end
 end
