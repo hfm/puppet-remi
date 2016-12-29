@@ -1,7 +1,12 @@
+Release 1.4.0 (2016/12/29)
+---
+
+- Change: Use resource default and gpgcheck is true by default [#6](https://github.com/hfm/puppet-remi/pull/6)
+
 Release 1.3.2 (2016/12/29)
 ---
 
-- Fix: remi-safe and remi-php7\* repos dont support centos 5 [#5](https://github.com/hfm/puppet-remi/pull/4)
+- Fix: remi-safe and remi-php7\* repos dont support centos 5 [#5](https://github.com/hfm/puppet-remi/pull/5)
 
 Release 1.3.0 (2016/12/02)
 ---
