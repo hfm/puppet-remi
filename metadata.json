@@ -7,6 +7,11 @@
   "source": "https://github.com/hfm/puppet-remi",
   "project_page": "https://github.com/hfm/puppet-remi",
   "issues_url": "https://github.com/hfm/puppet-remi/issues",
+  "tags": [
+    "remi",
+    "rpm",
+    "repository"
+  ],
   "requirements": [
     {
       "name": "puppet",
