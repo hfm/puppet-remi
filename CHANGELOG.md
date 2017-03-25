@@ -1,3 +1,8 @@
+Release 1.5.0 (2017/03/26)
+---
+
+- Support remi-php53 repository [#7](https://github.com/hfm/puppet-remi/pull/7)
+
 Release 1.4.0 (2016/12/29)
 ---
 
