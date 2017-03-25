@@ -7,6 +7,12 @@
   "source": "https://github.com/hfm/puppet-remi",
   "project_page": "https://github.com/hfm/puppet-remi",
   "issues_url": "https://github.com/hfm/puppet-remi/issues",
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=3.0.0 < 5.0.0"
+    }
+  ],
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
