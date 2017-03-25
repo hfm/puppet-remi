@@ -32,6 +32,12 @@ class remi (
   $remi_includepkgs                      = undef,
   $remi_exclude                          = undef,
 
+  $remi_php54_baseurl                    = absent,
+  $remi_php54_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php54/mirror",
+  $remi_php54_enabled                    = 0,
+  $remi_php54_includepkgs                = undef,
+  $remi_php54_exclude                    = undef,
+
   $remi_php55_baseurl                    = absent,
   $remi_php55_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php55/mirror",
   $remi_php55_enabled                    = 0,
@@ -153,6 +159,14 @@ class remi (
         enabled     => $remi_enabled,
         includepkgs => $remi_includepkgs,
         exclude     => $remi_exclude;
+
+      'remi-php54':
+        descr       => "Remi's PHP 5.4 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php55_baseurl,
+        mirrorlist  => $remi_php55_mirrorlist,
+        enabled     => $remi_php55_enabled,
+        includepkgs => $remi_php55_includepkgs,
+        exclude     => $remi_php55_exclude;
 
       'remi-php55':
         descr       => "Remi's PHP 5.5 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
