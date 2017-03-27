@@ -162,11 +162,11 @@ class remi (
 
       'remi-php54':
         descr       => "Remi's PHP 5.4 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
-        baseurl     => $remi_php55_baseurl,
-        mirrorlist  => $remi_php55_mirrorlist,
-        enabled     => $remi_php55_enabled,
-        includepkgs => $remi_php55_includepkgs,
-        exclude     => $remi_php55_exclude;
+        baseurl     => $remi_php54_baseurl,
+        mirrorlist  => $remi_php54_mirrorlist,
+        enabled     => $remi_php54_enabled,
+        includepkgs => $remi_php54_includepkgs,
+        exclude     => $remi_php54_exclude;
 
       'remi-php55':
         descr       => "Remi's PHP 5.5 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
