@@ -32,6 +32,7 @@ describe 'remi class' do
 
   %w(
     remi
+    remi-php54
     remi-php55
     remi-php56
     remi-test
