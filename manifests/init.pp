@@ -133,6 +133,30 @@ class remi (
   $remi_php71_test_debuginfo_enabled     = 0,
   $remi_php71_test_debuginfo_includepkgs = undef,
   $remi_php71_test_debuginfo_exclude     = undef,
+
+  $remi_php72_baseurl                    = absent,
+  $remi_php72_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php72/mirror",
+  $remi_php72_enabled                    = 0,
+  $remi_php72_includepkgs                = undef,
+  $remi_php72_exclude                    = undef,
+
+  $remi_php72_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php72/\$basearch/",
+  $remi_php72_debuginfo_mirrorlist       = absent,
+  $remi_php72_debuginfo_enabled          = 0,
+  $remi_php72_debuginfo_includepkgs      = undef,
+  $remi_php72_debuginfo_exclude          = undef,
+
+  $remi_php72_test_baseurl               = absent,
+  $remi_php72_test_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test72/mirror",
+  $remi_php72_test_enabled               = 0,
+  $remi_php72_test_includepkgs           = undef,
+  $remi_php72_test_exclude               = undef,
+
+  $remi_php72_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test72/\$basearch/",
+  $remi_php72_test_debuginfo_mirrorlist  = absent,
+  $remi_php72_test_debuginfo_enabled     = 0,
+  $remi_php72_test_debuginfo_includepkgs = undef,
+  $remi_php72_test_debuginfo_exclude     = undef,
 ){
 
   if $use_epel {
@@ -298,6 +322,38 @@ class remi (
           enabled     => $remi_php71_test_debuginfo_enabled,
           includepkgs => $remi_php71_test_debuginfo_includepkgs,
           exclude     => $remi_php71_test_debuginfo_exclude;
+
+        'remi-php72':
+          descr       => "Remi's PHP 7.2 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+          baseurl     => $remi_php72_baseurl,
+          mirrorlist  => $remi_php72_mirrorlist,
+          enabled     => $remi_php72_enabled,
+          includepkgs => $remi_php72_includepkgs,
+          exclude     => $remi_php72_exclude;
+
+        'remi-php72-debuginfo':
+          descr       => "Remi's PHP 7.2 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+          baseurl     => $remi_php72_debuginfo_baseurl,
+          mirrorlist  => $remi_php72_debuginfo_mirrorlist,
+          enabled     => $remi_php72_debuginfo_enabled,
+          includepkgs => $remi_php72_debuginfo_includepkgs,
+          exclude     => $remi_php72_debuginfo_exclude;
+
+        'remi-php72-test':
+          descr       => "Remi's PHP 7.2 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+          baseurl     => $remi_php72_test_baseurl,
+          mirrorlist  => $remi_php72_test_mirrorlist,
+          enabled     => $remi_php72_test_enabled,
+          includepkgs => $remi_php72_test_includepkgs,
+          exclude     => $remi_php72_test_exclude;
+
+        'remi-php72-test-debuginfo':
+          descr       => "Remi's PHP 7.2 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+          baseurl     => $remi_php72_test_debuginfo_baseurl,
+          mirrorlist  => $remi_php72_test_debuginfo_mirrorlist,
+          enabled     => $remi_php72_test_debuginfo_enabled,
+          includepkgs => $remi_php72_test_debuginfo_includepkgs,
+          exclude     => $remi_php72_test_debuginfo_exclude;
       }
     }
   } else {
