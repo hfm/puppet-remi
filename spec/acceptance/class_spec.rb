@@ -7,7 +7,7 @@ describe 'remi class' do
 
     package { 'php':
       ensure          => installed,
-      install_options => ['--enablerepo=remi-php71'],
+      install_options => ['--enablerepo=remi-php72'],
     }
     EOS
   end
@@ -50,6 +50,10 @@ describe 'remi class' do
     remi-php71-debuginfo
     remi-php71-test
     remi-php71-test-debuginfo
+    remi-php72
+    remi-php72-debuginfo
+    remi-php72-test
+    remi-php72-test-debuginfo
   ).each do |repo|
     describe yumrepo(repo) do
       it { should exist }
@@ -62,6 +66,6 @@ describe 'remi class' do
   end
 
   describe command('php -v') do
-    its(:stdout) { should match /^PHP 7.1.\d+/ }
+    its(:stdout) { should match /^PHP 7.2.\d+/ }
   end
 end
