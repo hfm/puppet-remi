@@ -1,3 +1,8 @@
+## [Release 1.6.0](https://github.com/hfm/puppet-remi/compare/v1.5.0...v1.6.0) (2017-11-30)
+
+* Support PHP 7.2 [#9](https://github.com/hfm/puppet-remi/pull/9) ([hfm](https://github.com/hfm))
+* Fix remi-php54 urls [#8](https://github.com/hfm/puppet-remi/pull/8) ([hfm](https://github.com/hfm))
+
 Release 1.5.0 (2017/03/26)
 ---
 
