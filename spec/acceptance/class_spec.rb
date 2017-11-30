@@ -7,7 +7,7 @@ describe 'remi class' do
 
     package { 'php':
       ensure          => installed,
-      install_options => ['--enablerepo=remi-php72'],
+      install_options => ['--enablerepo=remi-php72,remi-safe'],
     }
     EOS
   end
