@@ -13,6 +13,7 @@ end
 
 group :development do
   gem 'puppet-blacksmith', require: false
+  gem 'semantic_puppet', require: false
 end
 
 group :system_tests do
