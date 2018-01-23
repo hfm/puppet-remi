@@ -27,31 +27,31 @@ class remi (
   $use_epel                              = true,
 
   $remi_baseurl                          = absent,
-  $remi_mirrorlist                       = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
+  $remi_mirrorlist                       = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/remi/mirror",
   $remi_enabled                          = 0,
   $remi_includepkgs                      = undef,
   $remi_exclude                          = undef,
 
   $remi_php54_baseurl                    = absent,
-  $remi_php54_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php54/mirror",
+  $remi_php54_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php54/mirror",
   $remi_php54_enabled                    = 0,
   $remi_php54_includepkgs                = undef,
   $remi_php54_exclude                    = undef,
 
   $remi_php55_baseurl                    = absent,
-  $remi_php55_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php55/mirror",
+  $remi_php55_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php55/mirror",
   $remi_php55_enabled                    = 0,
   $remi_php55_includepkgs                = undef,
   $remi_php55_exclude                    = undef,
 
   $remi_php56_baseurl                    = absent,
-  $remi_php56_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php56/mirror",
+  $remi_php56_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php56/mirror",
   $remi_php56_enabled                    = 0,
   $remi_php56_includepkgs                = undef,
   $remi_php56_exclude                    = undef,
 
   $remi_test_baseurl                     = absent,
-  $remi_test_mirrorlist                  = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test/mirror",
+  $remi_test_mirrorlist                  = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/test/mirror",
   $remi_test_enabled                     = 0,
   $remi_test_includepkgs                 = undef,
   $remi_test_exclude                     = undef,
@@ -81,13 +81,13 @@ class remi (
   $remi_test_debuginfo_exclude           = undef,
 
   $remi_safe_baseurl                    = absent,
-  $remi_safe_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/safe/mirror",
+  $remi_safe_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/safe/mirror",
   $remi_safe_enabled                    = 0,
   $remi_safe_includepkgs                = undef,
   $remi_safe_exclude                    = undef,
 
   $remi_php70_baseurl                    = absent,
-  $remi_php70_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php70/mirror",
+  $remi_php70_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php70/mirror",
   $remi_php70_enabled                    = 0,
   $remi_php70_includepkgs                = undef,
   $remi_php70_exclude                    = undef,
@@ -99,7 +99,7 @@ class remi (
   $remi_php70_debuginfo_exclude          = undef,
 
   $remi_php70_test_baseurl               = absent,
-  $remi_php70_test_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test70/mirror",
+  $remi_php70_test_mirrorlist            = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/test70/mirror",
   $remi_php70_test_enabled               = 0,
   $remi_php70_test_includepkgs           = undef,
   $remi_php70_test_exclude               = undef,
@@ -111,7 +111,7 @@ class remi (
   $remi_php70_test_debuginfo_exclude     = undef,
 
   $remi_php71_baseurl                    = absent,
-  $remi_php71_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php71/mirror",
+  $remi_php71_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php71/mirror",
   $remi_php71_enabled                    = 0,
   $remi_php71_includepkgs                = undef,
   $remi_php71_exclude                    = undef,
@@ -123,7 +123,7 @@ class remi (
   $remi_php71_debuginfo_exclude          = undef,
 
   $remi_php71_test_baseurl               = absent,
-  $remi_php71_test_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test71/mirror",
+  $remi_php71_test_mirrorlist            = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/test71/mirror",
   $remi_php71_test_enabled               = 0,
   $remi_php71_test_includepkgs           = undef,
   $remi_php71_test_exclude               = undef,
@@ -135,7 +135,7 @@ class remi (
   $remi_php71_test_debuginfo_exclude     = undef,
 
   $remi_php72_baseurl                    = absent,
-  $remi_php72_mirrorlist                 = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/php72/mirror",
+  $remi_php72_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php72/mirror",
   $remi_php72_enabled                    = 0,
   $remi_php72_includepkgs                = undef,
   $remi_php72_exclude                    = undef,
@@ -147,7 +147,7 @@ class remi (
   $remi_php72_debuginfo_exclude          = undef,
 
   $remi_php72_test_baseurl               = absent,
-  $remi_php72_test_mirrorlist            = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/test72/mirror",
+  $remi_php72_test_mirrorlist            = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/test72/mirror",
   $remi_php72_test_enabled               = 0,
   $remi_php72_test_includepkgs           = undef,
   $remi_php72_test_exclude               = undef,
