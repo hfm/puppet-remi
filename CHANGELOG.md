@@ -1,3 +1,7 @@
+## [Release 1.7.0](https://github.com/hfm/puppet-remi/compare/v1.6.0...v1.7.0) (2018-01-24)
+
+* Change mirrorlist url as describe in the issue from Remi Github [#10](https://github.com/hfm/puppet-remi/pull/10) ([kapouik](https://github.com/kapouik))
+
 ## [Release 1.6.0](https://github.com/hfm/puppet-remi/compare/v1.5.0...v1.6.0) (2017-11-30)
 
 * Support PHP 7.2 [#9](https://github.com/hfm/puppet-remi/pull/9) ([hfm](https://github.com/hfm))
