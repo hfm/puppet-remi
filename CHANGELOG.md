@@ -1,3 +1,7 @@
+## [v1.8.0](https://github.com/hfm/puppet-remi/compare/v1.7.0...v1.8.0) (2018-06-08)
+
+* Convert to be compatible with the PDK [#11](https://github.com/hfm/puppet-remi/pull/11) ([hfm](https://github.com/hfm))
+
 ## [Release 1.7.0](https://github.com/hfm/puppet-remi/compare/v1.6.0...v1.7.0) (2018-01-24)
 
 * Change mirrorlist url as describe in the issue from Remi Github [#10](https://github.com/hfm/puppet-remi/pull/10) ([kapouik](https://github.com/kapouik))
