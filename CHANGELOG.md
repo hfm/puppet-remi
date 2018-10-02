@@ -1,3 +1,10 @@
+# Changelog
+
+## [v1.9.0](https://github.com/hfm/puppet-remi/compare/v1.8.0...v1.9.0) (2018-10-02)
+
+* Support Puppet 6.x and stdlib 5.x [#12](https://github.com/hfm/puppet-remi/pull/12) ([hfm](https://github.com/hfm))
+* Update pdk to 1.7.0 [#13](https://github.com/hfm/puppet-remi/pull/13) ([hfm](https://github.com/hfm))
+
 ## [v1.8.0](https://github.com/hfm/puppet-remi/compare/v1.7.0...v1.8.0) (2018-06-08)
 
 * Convert to be compatible with the PDK [#11](https://github.com/hfm/puppet-remi/pull/11) ([hfm](https://github.com/hfm))
