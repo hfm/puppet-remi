@@ -30,31 +30,7 @@ describe 'remi class' do
     it { is_expected.to be_mode 644 }
   end
 
-  %w[
-    remi
-    remi-php54
-    remi-php55
-    remi-php56
-    remi-test
-    remi-debuginfo
-    remi-php55-debuginfo
-    remi-php56-debuginfo
-    remi-php56-debuginfo
-    remi-test-debuginfo
-    remi-safe
-    remi-php70
-    remi-php70-debuginfo
-    remi-php70-test
-    remi-php70-test-debuginfo
-    remi-php71
-    remi-php71-debuginfo
-    remi-php71-test
-    remi-php71-test-debuginfo
-    remi-php72
-    remi-php72-debuginfo
-    remi-php72-test
-    remi-php72-test-debuginfo
-  ].each do |repo|
+  ['remi', 'remi-php54', 'remi-php55', 'remi-php56', 'remi-test', 'remi-debuginfo', 'remi-php55-debuginfo', 'remi-php56-debuginfo', 'remi-php56-debuginfo', 'remi-test-debuginfo', 'remi-safe', 'remi-php70', 'remi-php70-debuginfo', 'remi-php70-test', 'remi-php70-test-debuginfo', 'remi-php71', 'remi-php71-debuginfo', 'remi-php71-test', 'remi-php71-test-debuginfo', 'remi-php72', 'remi-php72-debuginfo', 'remi-php72-test', 'remi-php72-test-debuginfo'].each do |repo|
     describe yumrepo(repo) do
       it { is_expected.to exist }
       it { is_expected.not_to be_enabled }
