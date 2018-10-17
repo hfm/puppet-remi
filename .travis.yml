@@ -27,9 +27,6 @@ matrix:
       rvm: 2.1.9
     - sudo: required
       services: docker
-      env: BEAKER_set=centos6 BEAKER_debug=true CHECK=beaker
-    - sudo: required
-      services: docker
       env: BEAKER_set=centos7 BEAKER_debug=true CHECK=beaker
 branches:
   only:
