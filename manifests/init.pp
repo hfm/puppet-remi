@@ -172,23 +172,22 @@ class remi (
       path   => $path,
     }
 
-    Yumrepo {
-      gpgcheck => 1,
-      gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
-      require  => Class['remi::rpm_gpg_key'],
-    }
-
     yumrepo {
+      default:
+        gpgcheck       => 1,
+        gpgkey         => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+        require        => Class['remi::rpm_gpg_key'],
+        proxy          => $proxy,
+        proxy_password => $proxy_password,
+        proxy_username => $proxy_username;
+
       'remi':
         descr          => "Remi's RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
         baseurl        => $remi_baseurl,
         mirrorlist     => $remi_mirrorlist,
         enabled        => $remi_enabled,
         includepkgs    => $remi_includepkgs,
-        exclude        => $remi_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_exclude;
 
       'remi-php54':
         descr          => "Remi's PHP 5.4 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -196,10 +195,7 @@ class remi (
         mirrorlist     => $remi_php54_mirrorlist,
         enabled        => $remi_php54_enabled,
         includepkgs    => $remi_php54_includepkgs,
-        exclude        => $remi_php54_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php54_exclude;
 
       'remi-php55':
         descr          => "Remi's PHP 5.5 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -207,10 +203,7 @@ class remi (
         mirrorlist     => $remi_php55_mirrorlist,
         enabled        => $remi_php55_enabled,
         includepkgs    => $remi_php55_includepkgs,
-        exclude        => $remi_php55_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php55_exclude;
 
       'remi-php56':
         descr          => "Remi's PHP 5.6 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -218,10 +211,7 @@ class remi (
         mirrorlist     => $remi_php56_mirrorlist,
         enabled        => $remi_php56_enabled,
         includepkgs    => $remi_php56_includepkgs,
-        exclude        => $remi_php56_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php56_exclude;
 
       'remi-test':
         descr          => "Remi's test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -229,10 +219,7 @@ class remi (
         mirrorlist     => $remi_test_mirrorlist,
         enabled        => $remi_test_enabled,
         includepkgs    => $remi_test_includepkgs,
-        exclude        => $remi_test_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_test_exclude;
 
       'remi-debuginfo':
         descr          => "Remi's RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -240,10 +227,7 @@ class remi (
         mirrorlist     => $remi_debuginfo_mirrorlist,
         enabled        => $remi_debuginfo_enabled,
         includepkgs    => $remi_debuginfo_includepkgs,
-        exclude        => $remi_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_debuginfo_exclude;
 
       'remi-php55-debuginfo':
         descr          => "Remi's PHP 5.5 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -251,10 +235,7 @@ class remi (
         mirrorlist     => $remi_php55_debuginfo_mirrorlist,
         enabled        => $remi_php55_debuginfo_enabled,
         includepkgs    => $remi_php55_debuginfo_includepkgs,
-        exclude        => $remi_php55_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php55_debuginfo_exclude;
 
       'remi-php56-debuginfo':
         descr          => "Remi's PHP 5.6 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -262,10 +243,7 @@ class remi (
         mirrorlist     => $remi_php56_debuginfo_mirrorlist,
         enabled        => $remi_php56_debuginfo_enabled,
         includepkgs    => $remi_php56_debuginfo_includepkgs,
-        exclude        => $remi_php56_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php56_debuginfo_exclude;
 
       'remi-test-debuginfo':
         descr          => "Remi's test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -273,10 +251,7 @@ class remi (
         mirrorlist     => $remi_test_debuginfo_mirrorlist,
         enabled        => $remi_test_debuginfo_enabled,
         includepkgs    => $remi_test_debuginfo_includepkgs,
-        exclude        => $remi_test_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_test_debuginfo_exclude;
 
       'remi-safe':
         descr          => "Safe Remi's test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -284,10 +259,7 @@ class remi (
         mirrorlist     => $remi_safe_mirrorlist,
         enabled        => $remi_safe_enabled,
         includepkgs    => $remi_safe_includepkgs,
-        exclude        => $remi_safe_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_safe_exclude;
 
       'remi-php70':
         descr          => "Remi's PHP 7.0 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -295,10 +267,7 @@ class remi (
         mirrorlist     => $remi_php70_mirrorlist,
         enabled        => $remi_php70_enabled,
         includepkgs    => $remi_php70_includepkgs,
-        exclude        => $remi_php70_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php70_exclude;
 
       'remi-php70-debuginfo':
         descr          => "Remi's PHP 7.0 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -306,10 +275,7 @@ class remi (
         mirrorlist     => $remi_php70_debuginfo_mirrorlist,
         enabled        => $remi_php70_debuginfo_enabled,
         includepkgs    => $remi_php70_debuginfo_includepkgs,
-        exclude        => $remi_php70_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php70_debuginfo_exclude;
 
       'remi-php70-test':
         descr          => "Remi's PHP 7.0 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -317,10 +283,7 @@ class remi (
         mirrorlist     => $remi_php70_test_mirrorlist,
         enabled        => $remi_php70_test_enabled,
         includepkgs    => $remi_php70_test_includepkgs,
-        exclude        => $remi_php70_test_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php70_test_exclude;
 
       'remi-php70-test-debuginfo':
         descr          => "Remi's PHP 7.0 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -328,10 +291,7 @@ class remi (
         mirrorlist     => $remi_php70_test_debuginfo_mirrorlist,
         enabled        => $remi_php70_test_debuginfo_enabled,
         includepkgs    => $remi_php70_test_debuginfo_includepkgs,
-        exclude        => $remi_php70_test_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php70_test_debuginfo_exclude;
 
       'remi-php71':
         descr          => "Remi's PHP 7.1 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -339,10 +299,7 @@ class remi (
         mirrorlist     => $remi_php71_mirrorlist,
         enabled        => $remi_php71_enabled,
         includepkgs    => $remi_php71_includepkgs,
-        exclude        => $remi_php71_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php71_exclude;
 
       'remi-php71-debuginfo':
         descr          => "Remi's PHP 7.1 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -350,10 +307,7 @@ class remi (
         mirrorlist     => $remi_php71_debuginfo_mirrorlist,
         enabled        => $remi_php71_debuginfo_enabled,
         includepkgs    => $remi_php71_debuginfo_includepkgs,
-        exclude        => $remi_php71_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php71_debuginfo_exclude;
 
       'remi-php71-test':
         descr          => "Remi's PHP 7.1 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -361,10 +315,7 @@ class remi (
         mirrorlist     => $remi_php71_test_mirrorlist,
         enabled        => $remi_php71_test_enabled,
         includepkgs    => $remi_php71_test_includepkgs,
-        exclude        => $remi_php71_test_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php71_test_exclude;
 
       'remi-php71-test-debuginfo':
         descr          => "Remi's PHP 7.1 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -372,10 +323,7 @@ class remi (
         mirrorlist     => $remi_php71_test_debuginfo_mirrorlist,
         enabled        => $remi_php71_test_debuginfo_enabled,
         includepkgs    => $remi_php71_test_debuginfo_includepkgs,
-        exclude        => $remi_php71_test_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php71_test_debuginfo_exclude;
 
       'remi-php72':
         descr          => "Remi's PHP 7.2 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -383,10 +331,7 @@ class remi (
         mirrorlist     => $remi_php72_mirrorlist,
         enabled        => $remi_php72_enabled,
         includepkgs    => $remi_php72_includepkgs,
-        exclude        => $remi_php72_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php72_exclude;
 
       'remi-php72-debuginfo':
         descr          => "Remi's PHP 7.2 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -394,10 +339,7 @@ class remi (
         mirrorlist     => $remi_php72_debuginfo_mirrorlist,
         enabled        => $remi_php72_debuginfo_enabled,
         includepkgs    => $remi_php72_debuginfo_includepkgs,
-        exclude        => $remi_php72_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php72_debuginfo_exclude;
 
       'remi-php72-test':
         descr          => "Remi's PHP 7.2 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
@@ -405,10 +347,7 @@ class remi (
         mirrorlist     => $remi_php72_test_mirrorlist,
         enabled        => $remi_php72_test_enabled,
         includepkgs    => $remi_php72_test_includepkgs,
-        exclude        => $remi_php72_test_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php72_test_exclude;
 
       'remi-php72-test-debuginfo':
         descr          => "Remi's PHP 7.2 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
@@ -416,10 +355,7 @@ class remi (
         mirrorlist     => $remi_php72_test_debuginfo_mirrorlist,
         enabled        => $remi_php72_test_debuginfo_enabled,
         includepkgs    => $remi_php72_test_debuginfo_includepkgs,
-        exclude        => $remi_php72_test_debuginfo_exclude,
-        proxy          => $proxy,
-        proxy_password => $proxy_password,
-        proxy_username => $proxy_username;
+        exclude        => $remi_php72_test_debuginfo_exclude;
     }
   } else {
     notice("This remi module does not support ${::operatingsystem}.")
