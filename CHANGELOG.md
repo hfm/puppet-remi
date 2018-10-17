@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.11.0](https://github.com/hfm/puppet-remi/compare/v1.10.0...v1.11.0) (2018-10-18)
+
+* Support PHP 7.3 [#17](https://github.com/hfm/puppet-remi/pull/17) ([hfm](https://github.com/hfm))
+* Use default resource [#16](https://github.com/hfm/puppet-remi/pull/16) ([hfm](https://github.com/hfm))
+* Drop support centos 5 [#15](https://github.com/hfm/puppet-remi/pull/15) ([hfm](https://github.com/hfm))
+
 ## [v1.10.0](https://github.com/hfm/puppet-remi/compare/v1.9.0...v1.10.0) (2018-10-18)
 
 * Add support for configuring a proxy on remi repos [#14](https://github.com/hfm/puppet-remi/pull/14) ([jlmaners](https://github.com/jlmaners))
