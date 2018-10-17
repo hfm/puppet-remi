@@ -65,14 +65,6 @@ remi::remi_php71_enabled: 1
 - `ensure`: Whether the RPM-GPG-KEY-remi file should exist. Default to present.
 - `path`: The path to the RPM-GPG-KEY-remi file to manage. Must be an absolute path. Default to '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi'.
 
-## Limitations
-
-This module has been tested on:
-
-- RedHat Enterprise Linux 5, 6, 7
-- CentOS 5, 6, 7
-- Scientific Linux 5, 6, 7
-
 ## Development
 
 ### Running tests
