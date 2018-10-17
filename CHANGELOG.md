@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.10.0](https://github.com/hfm/puppet-remi/compare/v1.9.0...v1.10.0) (2018-10-18)
+
+* Add support for configuring a proxy on remi repos [#14](https://github.com/hfm/puppet-remi/pull/14) ([jlmaners](https://github.com/jlmaners))
+
 ## [v1.9.0](https://github.com/hfm/puppet-remi/compare/v1.8.0...v1.9.0) (2018-10-02)
 
 * Support Puppet 6.x and stdlib 5.x [#12](https://github.com/hfm/puppet-remi/pull/12) ([hfm](https://github.com/hfm))
