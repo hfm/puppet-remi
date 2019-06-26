@@ -31,7 +31,7 @@ class remi::rpm_gpg_key (
   exec { 'import-remi':
     command => "rpm --import ${path}",
     path    => ['/bin', '/usr/bin'],
-    unless  => "rpm -q gpg-pubkey-$(gpg --throw-keyids ${path} | grep pub | cut -c 12-19 | tr '[A-Z]' '[a-z]')",
+    unless  => "rpm -q gpg-pubkey-$(echo $(gpg -q --throw-keyids --keyid-format short < ${path}) | grep pub | cut -f2 -d/ | cut -f1 -d' ' | tr '[A-Z]' '[a-z]')",
   }
 
 }
