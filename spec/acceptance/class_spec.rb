@@ -36,8 +36,7 @@ describe 'remi class' do
    'remi-php71', 'remi-php71-debuginfo', 'remi-php71-test', 'remi-php71-test-debuginfo',
    'remi-php72', 'remi-php72-debuginfo', 'remi-php72-test', 'remi-php72-test-debuginfo',
    'remi-php73', 'remi-php73-debuginfo', 'remi-php73-test', 'remi-php73-test-debuginfo',
-   'remi-php74', 'remi-php74-debuginfo', 'remi-php74-test', 'remi-php74-test-debuginfo'
-  ].each do |repo|
+   'remi-php74', 'remi-php74-debuginfo', 'remi-php74-test', 'remi-php74-test-debuginfo' ].each do |repo|
     describe yumrepo(repo) do
       it { is_expected.to exist }
       it { is_expected.not_to be_enabled }
