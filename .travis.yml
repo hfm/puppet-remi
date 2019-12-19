@@ -24,7 +24,7 @@ matrix:
     - env: CHECK=parallel_spec
       bundler_args: --without system_tests
     - env: PUPPET_GEM_VERSION="~> 4.0" CHECK=parallel_spec
-      rvm: 2.1.9
+      rvm: 2.4.4
     - sudo: required
       services: docker
       env: BEAKER_set=centos7 BEAKER_debug=true CHECK=beaker
