@@ -15,6 +15,8 @@
 
 ## Description
 
+:warning: This repository is not maintained anymore. You are free to use it as-is, but we will not tend to bug reports or other questions.
+
 This module configure [Remi's RPM repository](http://rpms.famillecollet.com/) and import RPM-GPG-KEY-remi.
 
 ## Setup
